@@ -3,10 +3,12 @@ import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { AlgorithmForm } from "../AlgorithmForm/AlgorithmForm";
 import { UserNavBar } from "../nav/UserNavBar";
 import { UserList } from "./UserList";
+import { useHistory } from "react-router-dom";
 
 export const User = () => {
     const [object, updateUser] = useState([])
     const { userId } = useParams()
+    const history = useHistory()
 
     // `http://localhost:8088/algorithms?_expand=user&userId=${userId}`
     //am i able to move this fecth call to a seperate module since it has the employeeId in it?
@@ -21,8 +23,17 @@ export const User = () => {
         []
     )
 
-
-
+    const deleteAlg = (id) => {
+        fetch(`http://localhost:8088/algorithms/${id}`, {
+            method: "DELETE"
+        })
+        .then(() => {
+            history.push("/users")
+        })
+        .then(() => {
+            history.push(`/users/${userId}`)
+        })
+    }
 
 
 
@@ -31,21 +42,53 @@ export const User = () => {
     return (
         <>
             <UserNavBar />
-            <h2>User's Algorithms</h2>
+
+
+
+
+
+
+
             {
-                object.map(
-                    (user) => {
-                        return <>
-                        <h3 key={user.methodId}>{user.method.name}</h3> 
-                        <h3 key={user.caseId}>{user.case.name}</h3> 
-                        <h3 key={user.userId}>{user.notation}</h3> 
-                        <h3 key={user.userId}>{user.description}</h3> 
-                        <h3 key={user.id}>{user.user.name}</h3>
-                        <hr></hr>
-                        </>
-                    }
-                )
+                (parseInt(userId) === parseInt(localStorage.getItem("cube_user"))) ?
+
+
+                    object.map(
+                        (user) => {
+                            return <>
+                            <div key={`algorithm--${user.id}`}>
+                                <h3 key={user.methodId}>{user.method.name}</h3>
+                                <h3 key={user.caseId}>{user.case.name}</h3>
+                                <h3 key={user.userId}>{user.notation}</h3>
+                                <h3 key={user.userId}>{user.description}</h3>
+                                <button onClick={() => {
+                                    deleteAlg(user.id)
+                                }}>Delete</button>
+                                <hr></hr>
+                                </div>
+                            </>
+                        }
+                    )
+
+
+                    :
+
+
+                    object.map(
+                        (user) => {
+                            return <>
+                                <h3 key={user.methodId}>{user.method.name}</h3>
+                                <h3 key={user.caseId}>{user.case.name}</h3>
+                                <h3 key={user.userId}>{user.notation}</h3>
+                                <h3 key={user.userId}>{user.description}</h3>
+                                <hr></hr>
+                            </>
+                        }
+                    )
+                       
+                   
             }
+
         </>
     )
 }
