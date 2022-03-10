@@ -4,6 +4,7 @@ import { HomePage } from "./HomePage/HomePage";
 import { UserList } from "./users/UserList";
 import { AlgorithmForm } from "./AlgorithmForm/AlgorithmForm";
 import { User } from "./users/User";
+import { AllAlgorithms } from "./AllAlgorithms/AllAlgorithms";
 
 
 export const ApplicationViews = () => {
@@ -15,6 +16,10 @@ export const ApplicationViews = () => {
 
             <Route exact path="/users">
         <UserList />
+            </Route>
+
+            <Route exact path="/allAlgorithms">
+        <AllAlgorithms />
             </Route>
 
             <Route path="/algorithmForm">

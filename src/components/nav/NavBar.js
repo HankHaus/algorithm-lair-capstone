@@ -13,6 +13,10 @@ export const HomePageNavBar = () => {
             </li>
 
             <li className="navbar__item">
+                <Link className="navbar__link" to="/allAlgorithms">View All Algorithms</Link>
+            </li>
+
+            <li className="navbar__item">
                 <Link className="navbar__link" to="#"
                 onClick={
                     () => {
