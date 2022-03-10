@@ -14,7 +14,7 @@ export const User = () => {
     //am i able to move this fecth call to a seperate module since it has the employeeId in it?
     useEffect(
         () => {
-            return fetch(`http://localhost:8088/algorithms?_expand=user&_expand=method&_expand=case&userId=${userId}`)
+            return fetch(`http://localhost:8088/algorithms?_expand=user&&_expand=method&_expand=case&userId=${userId}`)
                 .then(response => response.json())
                 .then((data) => {
                     updateUser(data)
@@ -27,12 +27,12 @@ export const User = () => {
         fetch(`http://localhost:8088/algorithms/${id}`, {
             method: "DELETE"
         })
-        .then(() => {
-            history.push("/users")
-        })
-        .then(() => {
-            history.push(`/users/${userId}`)
-        })
+            .then(() => {
+                history.push("/users")
+            })
+            .then(() => {
+                history.push(`/users/${userId}`)
+            })
     }
 
 
@@ -44,7 +44,7 @@ export const User = () => {
             <UserNavBar />
 
 
-
+          
 
 
 
@@ -56,15 +56,17 @@ export const User = () => {
                     object.map(
                         (user) => {
                             return <>
-                            <div key={`algorithm--${user.id}`}>
-                                <h3 key={user.methodId}>{user.method.name}</h3>
-                                <h3 key={user.caseId}>{user.case.name}</h3>
-                                <h3 key={user.userId}>{user.notation}</h3>
-                                <h3 key={user.userId}>{user.description}</h3>
-                                <button onClick={() => {
-                                    deleteAlg(user.id)
-                                }}>Delete</button>
-                                <hr></hr>
+                                <div key={`algorithm--${user.id}`}>
+                                    <h3 key={user.methodId}>{user.method.name}</h3>
+                                    <h3 key={user.caseId}>{user.case.name}</h3>
+                                    <h3 key={user.userId}>{user.notation}</h3>
+                                    <h3 key={user.userId}>{user.perm}</h3>
+                                    <h3 key={user.userId}>{user.description}</h3>
+                                    <button onClick={() => {
+                                        deleteAlg(user.id)
+                                    }}>Delete</button>
+                                    <hr></hr>
+                                    <br></br>
                                 </div>
                             </>
                         }
@@ -80,13 +82,15 @@ export const User = () => {
                                 <h3 key={user.methodId}>{user.method.name}</h3>
                                 <h3 key={user.caseId}>{user.case.name}</h3>
                                 <h3 key={user.userId}>{user.notation}</h3>
+                                <h3 key={user.userId}>{user.perm}</h3>
                                 <h3 key={user.userId}>{user.description}</h3>
                                 <hr></hr>
+                                <br></br>
                             </>
                         }
                     )
-                       
-                   
+
+
             }
 
         </>

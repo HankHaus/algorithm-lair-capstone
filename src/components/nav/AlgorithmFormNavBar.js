@@ -12,6 +12,10 @@ export const AlgorithmFormNavBar = () => {
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/users">Users</Link>
             </li>
+
+            <li className="navbar__item">
+                <Link className="navbar__link" to="/allAlgorithms">View All Algorithms</Link>
+            </li>
         </ul>
     )
 }
