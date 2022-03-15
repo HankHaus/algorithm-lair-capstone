@@ -1,4 +1,90 @@
-.homepageBody {
-    background-color: aqua;
-    
+
+body{
+    background-color: #fff1e1;
 }
+
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    background-color: #1d3c45;
+    padding: 20px;
+}
+
+.navbar__link {
+    font: bold 25px Arial;
+    text-decoration: none;
+    background-color: #d37b45;
+    color: #333333;
+    padding: 2px 6px 2px 6px;
+    border-top: 10px solid #e49f75;
+    border-right: 10px solid #c0500a;
+    border-bottom: 10px solid #74350e;
+    border-left: 10px solid #e4a37b;
+    border-radius: 25px;
+  }
+
+  .form-group {
+      margin-left: 10px;
+      margin-right: 1000px;
+    font: bold 25px Arial;
+    text-decoration: none;
+    background-color: #c3e9ff;
+    color: #333333;
+    padding: 2px 6px 2px 6px;
+    border-top: 6px solid #1d3c45;
+    border-right: 6px solid #1d3c45;
+    border-bottom: 6px solid #1d3c45;
+    border-left: 6px solid #1d3c45;
+    border-radius: 25px;
+  }
+
+  .submit-button {
+    margin-left: 10px;
+    margin-right: 1000px;
+  font: bold 25px Arial;
+  text-decoration: none;
+  background-color: whitesmoke;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 6px solid #1d3c45;
+  border-right: 6px solid #1d3c45;
+  border-bottom: 6px solid #1d3c45;
+  border-left: 6px solid #1d3c45;
+  border-radius: 25px;
+  }
+
+  .userListUser {
+    margin-left: 10px;
+    margin-right: 1200px;
+  font: bold 25px Arial;
+  text-decoration: none;
+  background-color: whitesmoke;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 6px solid #1d3c45;
+  border-right: 6px solid #1d3c45;
+  border-bottom: 6px solid #1d3c45;
+  border-left: 6px solid #1d3c45;
+  border-radius: 10px;
+  }
+
+  .userListItem {
+      border: 5px solid black;
+      margin-left: 400px;
+      margin-right: 400px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      background-color: rgb(197, 217, 255);
+      border-radius: 15px;
+  }
+
+  .searchBox {
+      margin-left: 600px;
+      margin-right: 600px;
+      width: 300px;
+  }
+
+  .spacingForListsContent {
+      margin-left: 10px;
+  }
