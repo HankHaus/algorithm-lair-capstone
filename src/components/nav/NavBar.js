@@ -4,19 +4,22 @@ import "./NavBar.css"
 
 export const HomePageNavBar = () => {
     return (
+        <>
+                <div className="homepageDiv">
         <ul className="navbar">
-            <li className="navbar__item active">
+            <ul className="navbar__item active">
                 <Link className="navbar__link" to="/algorithmForm">Create New Algorithm</Link>
-            </li>
-            <li className="navbar__item">
+            </ul>
+            <ul className="navbar__item">
                 <Link className="navbar__link" to="/users">Users</Link>
-            </li>
+            
+            </ul>
 
-            <li className="navbar__item">
+            <ul className="navbar__item">
                 <Link className="navbar__link" to="/allAlgorithms">View All Algorithms</Link>
-            </li>
+            </ul>
 
-            <li className="navbar__item">
+            <ul className="navbar__item">
                 <Link className="navbar__link" to="#"
                 onClick={
                     () => {
@@ -24,7 +27,9 @@ export const HomePageNavBar = () => {
                     }
                 }
                 >Logout</Link>
-            </li>
+            </ul>
         </ul>
+            </div>
+        </>
     )
 }

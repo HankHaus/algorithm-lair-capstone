@@ -232,7 +232,7 @@ export const AlgorithmForm = () => {
 
 
 
-                <button onClick={submitAlgorithm} className="btn btn-primary">
+                <button onClick={submitAlgorithm} className="submit-button">
                     Submit
                 </button>
 

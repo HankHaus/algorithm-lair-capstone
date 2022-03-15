@@ -56,17 +56,18 @@ export const User = () => {
                     object.map(
                         (user) => {
                             return <>
+                            <div className="userListItem">
                                 <div key={`algorithm--${user.id}`}>
-                                    <h3 key={user.methodId}>{user.method.name}</h3>
-                                    <h3 key={user.caseId}>{user.case.name}</h3>
-                                    <h3 key={user.userId}>{user.notation}</h3>
-                                    <h3 key={user.userId}>{user.perm}</h3>
-                                    <h3 key={user.userId}>{user.description}</h3>
-                                    <button onClick={() => {
+                                    <h3 class="spacingForListsContent" key={user.methodId}>{user.method.name}</h3>
+                                    <h3 class="spacingForListsContent" key={user.caseId}>{user.case.name}</h3>
+                                    <h3 class="spacingForListsContent" key={user.userId}>{user.notation}</h3>
+                                    <h3 class="spacingForListsContent" key={user.userId}>{user.perm}</h3>
+                                    <h3 class="spacingForListsContent" key={user.userId}>{user.description}</h3>
+                                    <button class="spacingForListsContent" onClick={() => {
                                         deleteAlg(user.id)
                                     }}>Delete</button>
-                                    <hr></hr>
                                     <br></br>
+                                </div>
                                 </div>
                             </>
                         }
@@ -79,12 +80,13 @@ export const User = () => {
                     object.map(
                         (user) => {
                             return <>
-                                <h3 key={user.methodId}>{user.method.name}</h3>
-                                <h3 key={user.caseId}>{user.case.name}</h3>
-                                <h3 key={user.userId}>{user.notation}</h3>
-                                <h3 key={user.userId}>{user.perm}</h3>
-                                <h3 key={user.userId}>{user.description}</h3>
-                                <hr></hr>
+                            <div className="userListItem">
+                                <h3 class="spacingForListsContent" key={user.methodId}>{user.method.name}</h3>
+                                <h3 class="spacingForListsContent" key={user.caseId}>{user.case.name}</h3>
+                                <h3 class="spacingForListsContent" key={user.userId}>{user.notation}</h3>
+                                <h3 class="spacingForListsContent" key={user.userId}>{user.perm}</h3>
+                                <h3 class="spacingForListsContent" key={user.userId}>{user.description}</h3>
+                             </div>
                                 <br></br>
                             </>
                         }

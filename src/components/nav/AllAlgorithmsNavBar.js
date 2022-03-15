@@ -5,17 +5,17 @@ import "./NavBar.css"
 export const AllAlgorithmsNavBar = () => {
     return (
         <ul className="navbar">
-            <li className="navbar__item active">
+            <ul className="navbar__item active">
                 <Link className="navbar__link" to="/homepage">Home</Link>
-            </li>
+            </ul>
 
-            <li className="navbar__item active">
+            <ul className="navbar__item active">
                 <Link className="navbar__link" to="/users">Users</Link>
-            </li>
+            </ul>
 
-            <li className="navbar__item active">
+            <ul className="navbar__item active">
                 <Link className="navbar__link" to="/algorithmForm">Create New Algorithm</Link>
-            </li>
+            </ul>
         </ul>
     )
 }
