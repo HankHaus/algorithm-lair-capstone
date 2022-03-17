@@ -27,7 +27,7 @@ export const UserList = () => {
             {
                 users.map(
                     (user) => {
-                        return <p key={`user--${user.id}`} className="userListUser"><Link to={`/users/${user.id}`}>{user.name}</Link></p>
+                        return <p key={`user--${user.id}`} className="navbar__linkUSER"><Link to={`/users/${user.id}`}>{user.name}</Link></p>
                         
                     }
                 )

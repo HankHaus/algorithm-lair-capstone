@@ -27,6 +27,11 @@ export const User = () => {
         fetch(`http://localhost:8088/algorithms/${id}`, {
             method: "DELETE"
         })
+
+
+
+
+
             .then(() => {
                 history.push("/users")
             })
@@ -41,10 +46,15 @@ export const User = () => {
 
     return (
         <>
+
+
+
+
+
             <UserNavBar />
 
 
-          
+
 
 
 
@@ -56,18 +66,18 @@ export const User = () => {
                     object.map(
                         (user) => {
                             return <>
-                            <div className="userListItem">
-                                <div key={`algorithm--${user.id}`}>
-                                    <h3 class="spacingForListsContent" key={user.methodId}>{user.method.name}</h3>
-                                    <h3 class="spacingForListsContent" key={user.caseId}>{user.case.name}</h3>
-                                    <h3 class="spacingForListsContent" key={user.userId}>{user.notation}</h3>
-                                    <h3 class="spacingForListsContent" key={user.userId}>{user.perm}</h3>
-                                    <h3 class="spacingForListsContent" key={user.userId}>{user.description}</h3>
-                                    <button class="spacingForListsContent" onClick={() => {
-                                        deleteAlg(user.id)
-                                    }}>Delete</button>
-                                    <br></br>
-                                </div>
+                                <div className="userListItem">
+                                    <div key={`algorithm--${user.id}`}>
+                                        <h3 class="spacingForListsContent" key={user.methodId}>{user.method.name}</h3>
+                                        <h3 class="spacingForListsContent" key={user.caseId}>{user.case.name}</h3>
+                                        <h3 class="spacingForListsContent" key={user.userId}>{user.notation}</h3>
+                                        <h3 class="spacingForListsContent" key={user.userId}>{user.perm}</h3>
+                                        <h3 class="spacingForListsContent" key={user.userId}>{user.description}</h3>
+                                        <button class="spacingForListsContentDELETE" onClick={() => {
+                                            deleteAlg(user.id)
+                                        }}>Delete</button>
+                                        <br></br>
+                                    </div>
                                 </div>
                             </>
                         }
@@ -80,13 +90,13 @@ export const User = () => {
                     object.map(
                         (user) => {
                             return <>
-                            <div className="userListItem">
-                                <h3 class="spacingForListsContent" key={user.methodId}>{user.method.name}</h3>
-                                <h3 class="spacingForListsContent" key={user.caseId}>{user.case.name}</h3>
-                                <h3 class="spacingForListsContent" key={user.userId}>{user.notation}</h3>
-                                <h3 class="spacingForListsContent" key={user.userId}>{user.perm}</h3>
-                                <h3 class="spacingForListsContent" key={user.userId}>{user.description}</h3>
-                             </div>
+                                <div className="userListItem">
+                                    <h3 class="spacingForListsContent" key={user.methodId}>{user.method.name}</h3>
+                                    <h3 class="spacingForListsContent" key={user.caseId}>{user.case.name}</h3>
+                                    <h3 class="spacingForListsContent" key={user.userId}>{user.notation}</h3>
+                                    <h3 class="spacingForListsContent" key={user.userId}>{user.perm}</h3>
+                                    <h3 class="spacingForListsContent" key={user.userId}>{user.description}</h3>
+                                </div>
                                 <br></br>
                             </>
                         }
