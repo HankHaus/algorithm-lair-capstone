@@ -62,7 +62,7 @@ export const AllAlgorithms = () => {
                             <h3 class="spacingForListsContent">{filteredAlgorithm.notation}</h3>
                             <h3 class="spacingForListsContent">{filteredAlgorithm.description}</h3>
                             <h3 class="spacingForListsContent">{filteredAlgorithm.perm}</h3>
-                            <h3 class="spacingForListsContent">{filteredAlgorithm.user.name}</h3>
+                            <h3 class="spacingForListsContentBOTTOM">{filteredAlgorithm.user.name}</h3>
                             <br></br>
                         </div>
                         </div>
@@ -80,7 +80,7 @@ export const AllAlgorithms = () => {
                             <h3 class="spacingForListsContent">{filteredAlgorithm.notation}</h3>
                             <h3 class="spacingForListsContent">{filteredAlgorithm.description}</h3>
                             <h3 class="spacingForListsContent">{filteredAlgorithm.perm}</h3>
-                            <h3 class="spacingForListsContent">{filteredAlgorithm.user.name}</h3>
+                            <h3 class="spacingForListsContentBOTTOM">{filteredAlgorithm.user.name}</h3>
                             <br></br>
                         </div>
                         </div>

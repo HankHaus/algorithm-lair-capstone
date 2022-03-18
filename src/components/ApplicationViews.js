@@ -5,6 +5,7 @@ import { UserList } from "./users/UserList";
 import { AlgorithmForm } from "./AlgorithmForm/AlgorithmForm";
 import { User } from "./users/User";
 import { AllAlgorithms } from "./AllAlgorithms/AllAlgorithms";
+import { StopWatch } from "./TimeTracker/StopWatch/StopWatch";
 
 
 export const ApplicationViews = () => {
@@ -28,6 +29,10 @@ export const ApplicationViews = () => {
 
             <Route path="/users/:userId(\d+)">
         <User />
+            </Route>
+
+            <Route path="/stopwatch">
+        <StopWatch />
             </Route>
         </>
 
