@@ -19,7 +19,7 @@ export const UserList = () => {
         []
     ) 
 
-  
+   
 
     return (
         <>
@@ -27,7 +27,13 @@ export const UserList = () => {
             {
                 users.map(
                     (user) => {
-                        return <p key={`user--${user.id}`} className="navbar__linkUSER"><Link to={`/users/${user.id}`}>{user.name}</Link></p>
+                        return <div>
+                            <p key={`user--${user.id}`} className="navbar__linkUSER">{user.name}
+                        <br></br><Link to={`/users/${user.id}`}>Algorithms</Link>
+                        <br></br>Solve Times
+                        </p>
+                        <hr></hr>
+                            </div>
                         
                     }
                 )

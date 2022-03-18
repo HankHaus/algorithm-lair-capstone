@@ -22,6 +22,10 @@ export const UserNavBar = () => {
                 <Link className="navbar__link" to="/allAlgorithms">View All Algorithms</Link>
             </ul>
 
+            <ul className="navbar__item">
+                <Link className="navbar__link" to="/stopwatch">StopWatch</Link>
+            </ul>
+
             
         </ul>
 

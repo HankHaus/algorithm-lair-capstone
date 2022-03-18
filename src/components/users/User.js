@@ -32,6 +32,7 @@ export const User = () => {
 
 
 
+
             .then(() => {
                 history.push("/users")
             })
@@ -76,6 +77,7 @@ export const User = () => {
                                         <button class="spacingForListsContentDELETE" onClick={() => {
                                             deleteAlg(user.id)
                                         }}>Delete</button>
+                                        <hr></hr>
                                         <br></br>
                                     </div>
                                 </div>
@@ -97,6 +99,7 @@ export const User = () => {
                                     <h3 class="spacingForListsContent" key={user.userId}>{user.perm}</h3>
                                     <h3 class="spacingForListsContent" key={user.userId}>{user.description}</h3>
                                 </div>
+                                <hr></hr>
                                 <br></br>
                             </>
                         }

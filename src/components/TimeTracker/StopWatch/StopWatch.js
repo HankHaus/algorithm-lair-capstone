@@ -1,6 +1,6 @@
 import { UserNavBar } from "../../nav/UserNavBar"
 
-
+import { useRef } from "react";
 
 
 
@@ -15,6 +15,7 @@ export const StopWatch = () => {
   const [isActive, setIsActive] = useState(false);
   const [isPaused, setIsPaused] = useState(true);
   const [time, setTime] = useState(0);
+
   
   React.useEffect(() => {
     let interval = null;
@@ -30,6 +31,8 @@ export const StopWatch = () => {
       clearInterval(interval);
     };
   }, [isActive, isPaused]);
+
+
   
   const handleStart = () => {
     setIsActive(true);
@@ -44,6 +47,11 @@ export const StopWatch = () => {
     setIsActive(false);
     setTime(0);
   };
+
+
+  const getIsPaused = () => {
+    return isPaused
+  }
   
   return (
     <div className="stop-watch">
@@ -53,8 +61,12 @@ export const StopWatch = () => {
         active={isActive}
         isPaused={isPaused}
         handleStart={handleStart}
+        setIsActive={setIsActive}
+        setIsPaused={setIsPaused}
         handlePauseResume={handlePauseResume}
         handleReset={handleReset}
+        getIsPaused={getIsPaused}
+     
       />
     </div>
   );
