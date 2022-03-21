@@ -24,7 +24,7 @@ export default function ControlButtons(props) {
   const handleSpace = (event) => {
     if (event.keyCode === 32) {
    
-      if (props.active === false && props.isPaused === true) {
+      if (props.active === false) {
         props.setIsActive(true) 
         props.setIsPaused(false)
        
@@ -49,7 +49,7 @@ export default function ControlButtons(props) {
 
     return () => document.removeEventListener("keypress", handleSpace)
   }, [props])
-
+ 
 
 
 

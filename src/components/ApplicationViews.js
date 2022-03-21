@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom"
+import { Redirect, Route } from "react-router-dom"
 import { HomePage } from "./HomePage/HomePage";
 import { UserList } from "./users/UserList";
 import { AlgorithmForm } from "./AlgorithmForm/AlgorithmForm";
@@ -11,6 +11,10 @@ import { StopWatch } from "./TimeTracker/StopWatch/StopWatch";
 export const ApplicationViews = () => {
     return (
         <>
+<Route exact path="/">
+        <Redirect to="/homepage" />
+            </Route>
+
             <Route path="/homepage">
         <HomePage />
             </Route>

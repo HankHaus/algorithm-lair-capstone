@@ -37,11 +37,11 @@ export const HomePage = () => {
       
 
             <HomePageNavBar />
-<div className="maincontainer">
+<div className="mainhomepagecontainer">
 
             <h2 className="app-title">Algorithm Lair</h2>
 
-            <p className="app-description">Algorithm Lair is the app that lets you keep track of all your handy cube algorithms!</p>
+            <p className="app-description">Algorithm Lair is the speedcubing site that lets you keep track of all your handy algorithms!</p>
 
             <div className="createnew">
 
