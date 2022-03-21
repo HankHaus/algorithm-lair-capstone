@@ -6,7 +6,7 @@ import { UserList } from "./UserList";
 import { useHistory } from "react-router-dom";
 
 export const User = () => {
-    const [object, updateUser] = useState([])
+    const [userArray, updateUser] = useState([])
     const { userId } = useParams()
     const history = useHistory()
 
@@ -64,24 +64,23 @@ export const User = () => {
                 (parseInt(userId) === parseInt(localStorage.getItem("cube_user"))) ?
 
 
-                    object.map(
+                    userArray.map(
                         (user) => {
-                            return <>
-                                <div className="userListItem">
-                                    <div key={`algorithm--${user.id}`}>
-                                        <h3 class="spacingForListsContent" key={user.methodId}>{user.method.name}</h3>
-                                        <h3 class="spacingForListsContent" key={user.caseId}>{user.case.name}</h3>
-                                        <h3 class="spacingForListsContent" key={user.userId}>{user.notation}</h3>
-                                        <h3 class="spacingForListsContent" key={user.userId}>{user.perm}</h3>
-                                        <h3 class="spacingForListsContent" key={user.userId}>{user.description}</h3>
-                                        <button class="spacingForListsContentDELETE" onClick={() => {
-                                            deleteAlg(user.id)
-                                        }}>Delete</button>
-                                        <hr></hr>
-                                        <br></br>
-                                    </div>
+                            return <div className="userListItem" key={user.id}>
+                                <div key={`algorithm--${user.id}`}>
+                                    <h3 className="spacingForListsContent">{user.method.name}</h3>
+                                    <h3 className="spacingForListsContent">{user.case.name}</h3>
+                                    <h3 className="spacingForListsContent">{user.notation}</h3>
+                                    <h3 className="spacingForListsContent">{user.perm}</h3>
+                                    <h3 className="spacingForListsContent">{user.description}</h3>
+                                    <button className="spacingForListsContentDELETE" onClick={() => {
+                                        deleteAlg(user.id)
+                                    }}>Delete</button>
+                                    <hr></hr>
+                                    <br></br>
                                 </div>
-                            </>
+                            </div>
+
                         }
                     )
 
@@ -89,19 +88,18 @@ export const User = () => {
                     :
 
 
-                    object.map(
+                    userArray.map(
                         (user) => {
-                            return <>
-                                <div className="userListItem">
-                                    <h3 class="spacingForListsContent" key={user.methodId}>{user.method.name}</h3>
-                                    <h3 class="spacingForListsContent" key={user.caseId}>{user.case.name}</h3>
-                                    <h3 class="spacingForListsContent" key={user.userId}>{user.notation}</h3>
-                                    <h3 class="spacingForListsContent" key={user.userId}>{user.perm}</h3>
-                                    <h3 class="spacingForListsContent" key={user.userId}>{user.description}</h3>
-                                </div>
+                            return<div className="userListItem" key={user.id}>
+                                <h3 className="spacingForListsContent">{user.method.name}</h3>
+                                <h3 className="spacingForListsContent">{user.case.name}</h3>
+                                <h3 className="spacingForListsContent">{user.notation}</h3>
+                                <h3 className="spacingForListsContent">{user.perm}</h3>
+                                <h3 className="spacingForListsContent">{user.description}</h3>
                                 <hr></hr>
                                 <br></br>
-                            </>
+                            </div>
+
                         }
                     )
 

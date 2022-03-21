@@ -55,35 +55,33 @@ export const AllAlgorithms = () => {
                 searchTerm === "" ?
                 unfilteredAlgorithms.map(
                     (filteredAlgorithm) => {
-                        return <div className="userListItem">
-                        <div key={`${filteredAlgorithm.id}`}>
-                            <h3 class="spacingForListsContent">{filteredAlgorithm.method.name}</h3>
-                            <h3 class="spacingForListsContent">{filteredAlgorithm.case.name}</h3>
-                            <h3 class="spacingForListsContent">{filteredAlgorithm.notation}</h3>
-                            <h3 class="spacingForListsContent">{filteredAlgorithm.description}</h3>
-                            <h3 class="spacingForListsContent">{filteredAlgorithm.perm}</h3>
-                            <h3 class="spacingForListsContentBOTTOM">{filteredAlgorithm.user.name}</h3>
+                        return <div key={`${filteredAlgorithm.id}`} className="userListItem">
+                            <h3 className="spacingForListsContent">{filteredAlgorithm.method.name}</h3>
+                            <h3 className="spacingForListsContent">{filteredAlgorithm.case.name}</h3>
+                            <h3 className="spacingForListsContent">{filteredAlgorithm.notation}</h3>
+                            <h3 className="spacingForListsContent">{filteredAlgorithm.description}</h3>
+                            <h3 className="spacingForListsContent">{filteredAlgorithm.perm}</h3>
+                            <h3 className="spacingForListsContentBOTTOM">{filteredAlgorithm.user.name}</h3>
                             <br></br>
                         </div>
-                        </div>
-                    }
+                      
+                    } 
                 )
 
 :
 
                 filteredAlgorithms.map(
                     (filteredAlgorithm) => {
-                        return <div className="userListItem">
-                        <div key={`${filteredAlgorithm.id}`}>
-                            <h3 class="spacingForListsContent">{filteredAlgorithm.method.name}</h3>
-                            <h3 class="spacingForListsContent">{filteredAlgorithm.case.name}</h3>
-                            <h3 class="spacingForListsContent">{filteredAlgorithm.notation}</h3>
-                            <h3 class="spacingForListsContent">{filteredAlgorithm.description}</h3>
-                            <h3 class="spacingForListsContent">{filteredAlgorithm.perm}</h3>
-                            <h3 class="spacingForListsContentBOTTOM">{filteredAlgorithm.user.name}</h3>
+                        return <div key={`${filteredAlgorithm.id}`} className="userListItem">
+                            <h3 className="spacingForListsContent">{filteredAlgorithm.method.name}</h3>
+                            <h3 className="spacingForListsContent">{filteredAlgorithm.case.name}</h3>
+                            <h3 className="spacingForListsContent">{filteredAlgorithm.notation}</h3>
+                            <h3 className="spacingForListsContent">{filteredAlgorithm.description}</h3>
+                            <h3 className="spacingForListsContent">{filteredAlgorithm.perm}</h3>
+                            <h3 className="spacingForListsContentBOTTOM">{filteredAlgorithm.user.name}</h3>
                             <br></br>
                         </div>
-                        </div>
+                    
                     }
                 )
                 }

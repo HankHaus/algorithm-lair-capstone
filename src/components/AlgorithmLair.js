@@ -13,7 +13,7 @@ export const AlgorithmLair = () => (
         if (localStorage.getItem("cube_user")) {
           return (
             <>
-            <Redirect to="/homepage" />
+        
             <ApplicationViews />
             </>
           );
