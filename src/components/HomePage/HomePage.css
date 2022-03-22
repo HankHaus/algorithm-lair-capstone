@@ -61,7 +61,7 @@
     
     .btn-one{
     background-color: #e42a2a;
-    border: 2px solid #e42a2a;
+    border: 2px solid #000000;
     }
     
     .btn-two{
@@ -69,9 +69,16 @@
     border: 2px solid #000000;
     }
 
+    .btn-three{
+      background-color: #15ff00;
+      border: 2px solid #000000;
+      }
+
     body{
-      background-color: #6e6e6ee0;
-      color: rgb(25, 0, 255);
+      background: linear-gradient(45deg, #00ff7328, #a2d5c665);
+      /* background: linear-gradient(45deg, #000000, #ffffff); */
+      color: #2A363B;
+      
     }
 
     
@@ -79,14 +86,27 @@
     .navbar{
       display: flex;
       justify-content: space-evenly;
-      background-color: #f7f7f78c;
+      background-color: #046674;
       margin: 0px;
+      height: 6vh;
     
     }
 
  
 .navbar__item{
-  margin: 7px;
+  background-color: #e5fcc2d5;
+
+  border: none;
+  text-align: center;
+  padding: 15px 32px;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.navbar__link{
+  color: #2A363B;
+  text-decoration: none;
+  font-size: 1vw;
 }
 
 
@@ -94,16 +114,27 @@
     .mainhomepagecontainer{
       height: 100%;
       width: 100%;
-      display: flex;
+       display: flex;
       flex-direction: column;
       align-items: center;
+      min-height: 100vh; 
     }
 
 
+    .homepageMinusNav{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 94vh;
+    }
+
 
     .app-title{
-      margin : 3rem 0;
-      width: 20%;
+      font-size: 7vw;
+      margin : 3vw 0;
+      width: 60%;
       display: flex;
       height: 12%;
       justify-content: center;
@@ -111,7 +142,8 @@
     }
     
     .app-description{
-      margin : 3rem 0;
+      font-size: 2vw;
+      margin : 3vw 0;
       width: 50%;
       display: flex;
       height: 12%;
@@ -120,7 +152,8 @@
     }
 
     .navbar__link__seperated{
-      margin : 3rem 0;
+      font-size: 3vw;
+      margin : 2vw 0;
       width: 100%;
       display: flex;
       height: 30%;

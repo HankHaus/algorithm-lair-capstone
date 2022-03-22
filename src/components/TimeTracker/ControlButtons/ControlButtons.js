@@ -44,6 +44,18 @@ export default function ControlButtons(props) {
 
 
 
+
+
+ 
+
+
+
+
+
+
+
+
+
   useEffect(() => {
     document.addEventListener("keypress", handleSpace)
 
@@ -88,6 +100,21 @@ export default function ControlButtons(props) {
   return (
     <div className="Control-Buttons">
       <div>{props.active ? ActiveButtons : StartButton}</div>
+       
+
+      <div className="timer">
+        <span className="digits">
+          {("0" + Math.floor((props.time / 60000) % 60)).slice(-2)}:
+        </span>
+        <span className="digits">
+          {("0" + Math.floor((props.time / 1000) % 60)).slice(-2)}.
+        </span>
+        
+        <span className="digits mili-sec">
+          {("0" + ((props.time / 10) % 100)).slice(-2)}
+        </span>
+        
+      </div>
     </div>
   );
 }
