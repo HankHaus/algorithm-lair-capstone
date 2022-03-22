@@ -6,6 +6,7 @@ import { AlgorithmForm } from "./AlgorithmForm/AlgorithmForm";
 import { User } from "./users/User";
 import { AllAlgorithms } from "./AllAlgorithms/AllAlgorithms";
 import { StopWatch } from "./TimeTracker/StopWatch/StopWatch";
+import { UserSolveTimes } from "./users/UserSolveTimes";
 
 
 export const ApplicationViews = () => {
@@ -31,8 +32,12 @@ export const ApplicationViews = () => {
         <AlgorithmForm />
             </Route>
 
-            <Route path="/users/:userId(\d+)">
+            <Route exact path="/users/:userId(\d+)">
         <User />
+            </Route>
+
+            <Route path="/users/solveTimes/:userId(\d+)">
+        <UserSolveTimes />
             </Route>
 
             <Route path="/stopwatch">

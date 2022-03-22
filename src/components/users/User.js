@@ -6,18 +6,28 @@ import { UserList } from "./UserList";
 import { useHistory } from "react-router-dom";
 
 export const User = () => {
-    const [userArray, updateUser] = useState([])
+    const [userAlgorithmArray, updateUserAlgorithmArray] = useState([])
     const { userId } = useParams()
     const history = useHistory()
+    const [userObject, updateUserObject] = useState({})
 
-    // `http://localhost:8088/algorithms?_expand=user&userId=${userId}`
-    //am i able to move this fecth call to a seperate module since it has the employeeId in it?
     useEffect(
         () => {
             return fetch(`http://localhost:8088/algorithms?_expand=user&&_expand=method&_expand=case&userId=${userId}`)
                 .then(response => response.json())
                 .then((data) => {
-                    updateUser(data)
+                    updateUserAlgorithmArray(data)
+                })
+        },
+        []
+    )    
+
+    useEffect(
+        () => {
+            return fetch(`http://localhost:8088/users`)
+                .then(response => response.json())
+                .then((data) => {
+                    updateUserObject(data.find(user => parseInt(userId) === user.id))
                 })
         },
         []
@@ -28,11 +38,6 @@ export const User = () => {
             method: "DELETE"
         })
 
-
-
-
-
-
             .then(() => {
                 history.push("/users")
             })
@@ -41,30 +46,20 @@ export const User = () => {
             })
     }
 
-
-
-
-
     return (
         <>
-
-
-
-
-
             <UserNavBar />
-
-
-
-
-
-
+            <p>
+                {
+                    userObject.name
+                }
+            </p>
 
             {
                 (parseInt(userId) === parseInt(localStorage.getItem("cube_user"))) ?
 
 
-                    userArray.map(
+                    userAlgorithmArray.map(
                         (user) => {
                             return <div className="userListItem" key={user.id}>
                                 <div key={`algorithm--${user.id}`}>
@@ -88,9 +83,9 @@ export const User = () => {
                     :
 
 
-                    userArray.map(
+                    userAlgorithmArray.map(
                         (user) => {
-                            return<div className="userListItem" key={user.id}>
+                            return <div className="userListItem" key={user.id}>
                                 <h3 className="spacingForListsContent">{user.method.name}</h3>
                                 <h3 className="spacingForListsContent">{user.case.name}</h3>
                                 <h3 className="spacingForListsContent">{user.notation}</h3>

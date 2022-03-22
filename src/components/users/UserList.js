@@ -42,6 +42,9 @@ export const UserList = () => {
                                 <div className="algLink">
                                     <Link to={`/users/${user.id}`}>Algorithms</Link>
                                 </div>
+                                <div className="algLink">
+                                    <Link to={`/users/solveTimes/${user.id}`}>Solve Times</Link>
+                                </div>
                                 <br></br>
                             <hr className="hr"></hr>
                         </div>
