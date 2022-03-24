@@ -18,7 +18,7 @@ export const UserSolveTimes = () => {
                 })
         },
         []
-    )    
+    )
 
     useEffect(
         () => {
@@ -54,26 +54,26 @@ export const UserSolveTimes = () => {
 
 
 
-// // initialize new Date object
-// const date_ob = new Date(inventoryObject.timestamp);
+    // // initialize new Date object
+    // const date_ob = new Date(inventoryObject.timestamp);
 
-// // year as 4 digits (YYYY)
-// const year = date_ob.getFullYear();
+    // // year as 4 digits (YYYY)
+    // const year = date_ob.getFullYear();
 
-// // month as 2 digits (MM)
-// const month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+    // // month as 2 digits (MM)
+    // const month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
 
-// // date as 2 digits (DD)
-// const date = ("0" + date_ob.getDate()).slice(-2);
+    // // date as 2 digits (DD)
+    // const date = ("0" + date_ob.getDate()).slice(-2);
 
-// // hours as 2 digits (hh)
-// const hours = ("0" + date_ob.getHours()).slice(-2);
+    // // hours as 2 digits (hh)
+    // const hours = ("0" + date_ob.getHours()).slice(-2);
 
-// // minutes as 2 digits (mm)
-// const minutes = ("0" + date_ob.getMinutes()).slice(-2);
+    // // minutes as 2 digits (mm)
+    // const minutes = ("0" + date_ob.getMinutes()).slice(-2);
 
-// // seconds as 2 digits (ss)
-// const seconds = ("0" + date_ob.getSeconds()).slice(-2);
+    // // seconds as 2 digits (ss)
+    // const seconds = ("0" + date_ob.getSeconds()).slice(-2);
 
 
 
@@ -89,7 +89,7 @@ export const UserSolveTimes = () => {
     return (
         <>
             <UserNavBar />
-            <p>
+            <p className="displayNameOnList">
                 {
                     userObject.name
                 }
@@ -101,42 +101,43 @@ export const UserSolveTimes = () => {
 
                     UserSolveTimesArray.map(
                         (solveTime) => {
-                                                      // initialize new Date object
-const date_ob = new Date(solveTime.timestamp);
+                            // initialize new Date object
+                            const date_ob = new Date(solveTime.timestamp);
 
-// year as 4 digits (YYYY)
-const year = date_ob.getFullYear();
+                            // year as 4 digits (YYYY)
+                            const year = date_ob.getFullYear();
 
-// month as 2 digits (MM)
-const month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+                            // month as 2 digits (MM)
+                            const month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
 
-// date as 2 digits (DD)
-const date = ("0" + date_ob.getDate()).slice(-2);
+                            // date as 2 digits (DD)
+                            const date = ("0" + date_ob.getDate()).slice(-2);
 
-// hours as 2 digits (hh)
-const hours = ("0" + date_ob.getHours()).slice(-2);
+                            // hours as 2 digits (hh)
+                            const hours = ("0" + date_ob.getHours()).slice(-2);
 
-// minutes as 2 digits (mm)
-const minutes = ("0" + date_ob.getMinutes()).slice(-2);
+                            // minutes as 2 digits (mm)
+                            const minutes = ("0" + date_ob.getMinutes()).slice(-2);
 
-// seconds as 2 digits (ss)
-const seconds = ("0" + date_ob.getSeconds()).slice(-2);
+                            // seconds as 2 digits (ss)
+                            const seconds = ("0" + date_ob.getSeconds()).slice(-2);
 
-                                    
-                            return <div className="userListItem" key={solveTime.id}>
-                                <div key={`algorithm--${solveTime.id}`}>
-                                    <h3 className="spacingForListsContent">{new Date(solveTime.solveTime).toISOString().slice(11,19)
-}</h3>
-                                    <h3 className="spacingForListsContent">{solveTime.cubeSize.size}</h3>
-                                    {/* <h3 className="spacingForListsContent">{new Date(solveTime.timestamp).toString()}</h3> */}
-          
-                                    <h3 className="spacingForListsContent">{month}/{date}/{year}</h3>
-                                    
-                                    <button className="spacingForListsContentDELETE" onClick={() => {
-                                        deleteTime(solveTime.id)
-                                    }}>Delete</button>
-                                    <hr></hr>
-                                    <br></br>
+
+                            return <div className="usersalglistcontainment">
+                                <div className="usersalglist" key={solveTime.id}>
+                                    <div key={`algorithm--${solveTime.id}`}>
+                                        <h3 className="spacingForListsContent">{new Date(solveTime.solveTime).toISOString().slice(11, 19)
+                                        }</h3>
+                                        <h3 className="spacingForListsContent">{solveTime.cubeSize.size}</h3>
+                                        {/* <h3 className="spacingForListsContent">{new Date(solveTime.timestamp).toString()}</h3> */}
+
+                                        <h3 className="spacingForListsContent">{month}/{date}/{year}</h3>
+
+                                        <button className="spacingForListsContentDELETE" onClick={() => {
+                                            deleteTime(solveTime.id)
+                                        }}>Delete</button>
+                                        <br></br>
+                                    </div>
                                 </div>
                             </div>
 
@@ -149,40 +150,42 @@ const seconds = ("0" + date_ob.getSeconds()).slice(-2);
 
                     UserSolveTimesArray.map(
                         (solveTime) => {
-                                                      // initialize new Date object
-const date_ob = new Date(solveTime.timestamp);
+                            // initialize new Date object
+                            const date_ob = new Date(solveTime.timestamp);
 
-// year as 4 digits (YYYY)
-const year = date_ob.getFullYear();
+                            // year as 4 digits (YYYY)
+                            const year = date_ob.getFullYear();
 
-// month as 2 digits (MM)
-const month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+                            // month as 2 digits (MM)
+                            const month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
 
-// date as 2 digits (DD)
-const date = ("0" + date_ob.getDate()).slice(-2);
+                            // date as 2 digits (DD)
+                            const date = ("0" + date_ob.getDate()).slice(-2);
 
-// hours as 2 digits (hh)
-const hours = ("0" + date_ob.getHours()).slice(-2);
+                            // hours as 2 digits (hh)
+                            const hours = ("0" + date_ob.getHours()).slice(-2);
 
-// minutes as 2 digits (mm)
-const minutes = ("0" + date_ob.getMinutes()).slice(-2);
+                            // minutes as 2 digits (mm)
+                            const minutes = ("0" + date_ob.getMinutes()).slice(-2);
 
-// seconds as 2 digits (ss)
-const seconds = ("0" + date_ob.getSeconds()).slice(-2);
+                            // seconds as 2 digits (ss)
+                            const seconds = ("0" + date_ob.getSeconds()).slice(-2);
 
-                                    
-                            return <div className="userListItem" key={solveTime.id}>
-                                <div key={`algorithm--${solveTime.id}`}>
-                                    <h3 className="spacingForListsContent">{new Date(solveTime.solveTime).toISOString().slice(11,19)
-}</h3>
-                                    <h3 className="spacingForListsContent">{solveTime.cubeSize.size}</h3>
-                                    {/* <h3 className="spacingForListsContent">{new Date(solveTime.timestamp).toString()}</h3> */}
-          
-                                    <h3 className="spacingForListsContent">{month}/{date}/{year}</h3>
-                                    
-                                    
-                                    <hr></hr>
-                                    <br></br>
+
+                            return <div className="usersalglistcontainment">
+                                <div className="usersalglist" key={solveTime.id}>
+                                    <div key={`algorithm--${solveTime.id}`}>
+                                        <h3 className="spacingForListsContent">{new Date(solveTime.solveTime).toISOString().slice(11, 19)
+                                        }</h3>
+                                        <h3 className="spacingForListsContent">{solveTime.cubeSize.size}</h3>
+                                        {/* <h3 className="spacingForListsContent">{new Date(solveTime.timestamp).toString()}</h3> */}
+
+                                        <h3 className="spacingForListsContent">{month}/{date}/{year}</h3>
+
+
+                                      
+                                        <br></br>
+                                    </div>
                                 </div>
                             </div>
 

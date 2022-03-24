@@ -37,7 +37,7 @@ export const AllAlgorithms = () => {
                     return true
                 } else if (algorithm.perm.toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
                     return true
-                } 
+                }
 
             })
             setFilteredAlgorithms(filtered)
@@ -53,38 +53,42 @@ export const AllAlgorithms = () => {
             </div>
             {
                 searchTerm === "" ?
-                unfilteredAlgorithms.map(
-                    (filteredAlgorithm) => {
-                        return <div key={`${filteredAlgorithm.id}`} className="userListItem">
-                            <h3 className="spacingForListsContent">{filteredAlgorithm.method.name}</h3>
-                            <h3 className="spacingForListsContent">{filteredAlgorithm.case.name}</h3>
-                            <h3 className="spacingForListsContent">{filteredAlgorithm.notation}</h3>
-                            <h3 className="spacingForListsContent">{filteredAlgorithm.description}</h3>
-                            <h3 className="spacingForListsContent">{filteredAlgorithm.perm}</h3>
-                            <h3 className="spacingForListsContentBOTTOM">{filteredAlgorithm.user.name}</h3>
-                            <br></br>
-                        </div>
-                      
-                    } 
-                )
+                    unfilteredAlgorithms.map(
+                        (filteredAlgorithm) => {
+                            return <div className="allAlgsContainer">
+                                <div key={`${filteredAlgorithm.id}`} className="userListItem">
+                                    <h3 className="spacingForListsContent">{filteredAlgorithm.method.name}</h3>
+                                    <h3 className="spacingForListsContent">{filteredAlgorithm.case.name}</h3>
+                                    <h3 className="spacingForListsContent">{filteredAlgorithm.notation}</h3>
+                                    <h3 className="spacingForListsContent">{filteredAlgorithm.description}</h3>
+                                    <h3 className="spacingForListsContent">{filteredAlgorithm.perm}</h3>
+                                    <h3 className="spacingForListsContentBOTTOM">{filteredAlgorithm.user.name}</h3>
+                                    <br></br>
+                                </div>
+                            </div>
 
-:
+                        }
+                    )
 
-                filteredAlgorithms.map(
-                    (filteredAlgorithm) => {
-                        return <div key={`${filteredAlgorithm.id}`} className="userListItem">
-                            <h3 className="spacingForListsContent">{filteredAlgorithm.method.name}</h3>
-                            <h3 className="spacingForListsContent">{filteredAlgorithm.case.name}</h3>
-                            <h3 className="spacingForListsContent">{filteredAlgorithm.notation}</h3>
-                            <h3 className="spacingForListsContent">{filteredAlgorithm.description}</h3>
-                            <h3 className="spacingForListsContent">{filteredAlgorithm.perm}</h3>
-                            <h3 className="spacingForListsContentBOTTOM">{filteredAlgorithm.user.name}</h3>
-                            <br></br>
-                        </div>
-                    
-                    }
-                )
-                }
+                    :
+
+                    filteredAlgorithms.map(
+                        (filteredAlgorithm) => {
+                            return <div className="allAlgsContainer">
+                                <div key={`${filteredAlgorithm.id}`} className="userListItem">
+                                    <h3 className="spacingForListsContent">{filteredAlgorithm.method.name}</h3>
+                                    <h3 className="spacingForListsContent">{filteredAlgorithm.case.name}</h3>
+                                    <h3 className="spacingForListsContent">{filteredAlgorithm.notation}</h3>
+                                    <h3 className="spacingForListsContent">{filteredAlgorithm.description}</h3>
+                                    <h3 className="spacingForListsContent">{filteredAlgorithm.perm}</h3>
+                                    <h3 className="spacingForListsContentBOTTOM">{filteredAlgorithm.user.name}</h3>
+                                    <br></br>
+                                </div>
+                            </div>
+
+                        }
+                    )
+            }
 
         </>
     )
