@@ -23,6 +23,7 @@
       font-size: 3rem;
       color:  #ff0000;
       
+      
     }
     
     .mili-sec{
@@ -56,26 +57,33 @@
     align-items: center;
     cursor: pointer;
     color: #f5f5f5;
-    box-shadow: 3px 3px 4px rgb(66, 65, 65);
+    box-shadow: -2px 2px 2px rgb(66, 65, 65);
     }
     
     .btn-one{
     background-color: #e42a2a;
     border: 2px solid #000000;
+    font-size: 3vh;
+    color: #000000;
     }
     
     .btn-two{
     background-color: #00f7ff;
     border: 2px solid #000000;
+    font-size: 3vh;
+    color: #000000;
     }
 
     .btn-three{
       background-color: #15ff00;
       border: 2px solid #000000;
+      font-size: 3vh;
+      color: #000000;
+      margin-top: 20vh;
       }
 
     body{
-      background: linear-gradient(45deg, #00ff7328, #a2d5c665);
+      background: linear-gradient(45deg, #00ff734b, #a2d5c665);
       /* background: linear-gradient(45deg, #000000, #ffffff); */
       color: #2A363B;
       
@@ -86,27 +94,30 @@
     .navbar{
       display: flex;
       justify-content: space-evenly;
-      background-color: #046674;
+      background-color: #045663;
       margin: 0px;
-      height: 6vh;
+      /* height: 6vh; */
     
     }
 
  
 .navbar__item{
-  background-color: #e5fcc2d5;
-
-  border: none;
+  background: linear-gradient(68deg, #e5fcc2d5, #e3f0d1); 
+border-radius: 25px;
+  border: black solid 3px;
   text-align: center;
-  padding: 15px 32px;
+  padding: 10px;
   display: inline-block;
   font-size: 16px;
+  box-shadow: 3px 3px 4px rgb(66, 65, 65);
+  margin: .5vh;
 }
 
 .navbar__link{
   color: #2A363B;
   text-decoration: none;
-  font-size: 1vw;
+  font-size: 1em;
+  font-family: monospace;
 }
 
 
@@ -132,16 +143,19 @@
 
 
     .app-title{
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       font-size: 7vw;
       margin : 3vw 0;
       width: 60%;
       display: flex;
       height: 12%;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
     }
     
     .app-description{
+      font-family: monospace;
       font-size: 2vw;
       margin : 3vw 0;
       width: 50%;
@@ -152,7 +166,13 @@
     }
 
     .navbar__link__seperated{
+      background: linear-gradient(68deg, #e27c7c, #ffa0a0); 
+      color: #2A363B;
+      border-radius: 25px;
+      border: rgb(0, 0, 0) solid 3px;
+      text-decoration: none;
       font-size: 3vw;
+      padding: 2vw;
       margin : 2vw 0;
       width: 100%;
       display: flex;
@@ -163,27 +183,112 @@
 
    .navbar__linkUSER{
      margin-top: 9vh;
-     font-size: 25px;
+     font-size: 6vh;
+     border: #000000 solid 4px;
+     max-width: max-content;
+     padding: 1vw;
+     border-radius: 25px;
+     background: linear-gradient(68deg, #ee4545, #e76c6c);
+     box-shadow: -4px 4px 3px -3px rgb(66, 65, 65);
    }
 
 
 
    .algLink {
-    font: bold 15px Arial;
+    font: bold 2vh Arial;
     text-decoration: none;
-    background-color: #EEEEEE;
+    background: linear-gradient(68deg, #e27c7c, #ffa0a0);
     color: #333333;
     margin-top: 3vh;
     width: 5vw;
-    padding: 2px 6px 2px 6px;
-    border-top: 1px solid #CCCCCC;
-    border-right: 1px solid #333333;
-    border-bottom: 1px solid #333333;
-    border-left: 1px solid #CCCCCC;
+    border-radius: 25px;
+    text-decoration: none;
+    padding: 1vw;
+    border: #000000 solid 2px;
+  }
+
+  .solveTimeLink {
+    font: bold 2vh Arial;
+    text-decoration: none;
+    background: linear-gradient(68deg, #fca8a8, #e27c7c);
+    color: #333333;
+    border-radius: 25px;
+    margin-top: 3vh;
+    margin-left: 1vw;
+    width: 5vw;
+    text-decoration: none;
+    padding: 1vw;
+    border: #000000 solid 2px;
   }
 
 
+  .algAndSolveLinks{
+    display: flex;
+    flex-direction: row;
+  }
 
-    /* *{
-      border: dotted greenyellow;
+  .userListContainment{
+    margin-left: 2vw;
+    margin-top: 10vh;
+  }
+
+  .userListItem{
+    border: #000000 5px solid;
+    margin-bottom: 3vh;
+    border-radius: 35px;
+    padding: 2vh;
+    font-size: 2.5vh;
+    background: linear-gradient(68deg, #8a107598, #e27c7c9d);
+  }
+
+
+  .usersalglist{
+   border: black 5px solid;
+   margin: 2vh;
+   padding: 2vh;
+   border-radius: 15px;
+   font-size: 2.5vh;
+   background: linear-gradient(68deg, #8a107598, #e27c7c9d);
+  }
+
+  .usersalglistcontainment{
+    display: flex;
+    margin-left: 2vw;
+  }
+
+  .displayNameOnList{
+    font-size: 3.5vh;
+    font-weight: 800;
+    margin-left: 2vh;
+  }
+
+  .allAlgsContainer{
+    display: flex;
+    justify-content: space-evenly;
+    
+  }
+
+  .searchBox{
+    margin-left: 44%;
+    margin-bottom: 3vh;
+  }
+  .spacingForListsContentDELETE{
+    background-color: #000000;
+    color: #00f7ff;
+    font-size: 2.5vh;
+  }
+
+  .algorithmForm{
+    font-size: 4vh;
+  }
+
+  .submit-button{
+    background-color: #000000;
+    color: #00f7ff;
+    font-size: 4vh;
+    margin-top: 2vh;
+  }
+/* 
+    *{
+      border: dotted rgb(0, 0, 0);
     } */

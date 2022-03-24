@@ -36,17 +36,23 @@ export const UserList = () => {
                 users.map(
                     (user) => {
                         return <div key={`user--${user.id}`}>
-                            <p key={`user--${user.id}`} className="navbar__linkUSER">{user.name}
-                                <br ></br>
-                            </p>
-                                <div className="algLink">
-                                    <Link to={`/users/${user.id}`}>Algorithms</Link>
+                            <div className="userListContainment">
+
+                                <p key={`user--${user.id}`} className="navbar__linkUSER"><i>{user.name}</i>
+                                </p>
+
+                                <div className="algAndSolveLinks">
+                                    <div>
+                                        <Link to={`/users/${user.id}`}  className="algLink">Algorithms</Link>
+                                    </div>
+                                    <div>
+                                        <Link to={`/users/solveTimes/${user.id}`}  className="solveTimeLink">Solve Times</Link>
+                                    </div>
                                 </div>
-                                <div className="algLink">
-                                    <Link to={`/users/solveTimes/${user.id}`}>Solve Times</Link>
-                                </div>
-                                <br></br>
-                            <hr className="hr"></hr>
+                            </div>
+                            <br></br>
+                            <br></br>
+                            <hr></hr>
                         </div>
 
                     }
