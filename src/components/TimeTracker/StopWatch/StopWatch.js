@@ -12,13 +12,13 @@ export const StopWatch = () => {
   const [cubeSizes, setCubeSizes] = useState([])
   const [time, setTime] = useState(0);
   const [newSolveTime, setNewSolveTime] = useState({
-    
+
     "solveTime": "",
     "userId": parseInt(localStorage.getItem("cube_user")),
     "cubeSizeId": 1,
     "timestamp": Date.now()
   })
-  
+
 
 
 
@@ -34,7 +34,7 @@ export const StopWatch = () => {
       },
       body: JSON.stringify(solveTimeObject)
     }
-  
+
     return fetch("http://localhost:8088/solveTimes", fetchOption)
       .then(() => {
         history.push("/solveTimes")
@@ -119,31 +119,34 @@ export const StopWatch = () => {
     <>
       <UserNavBar />
 
-      {<fieldset>
-        <div className="cubeSize">
-          <label htmlFor="cubeSize">Cube Size: </label>
-          <select name="cubeSize"
-            onChange={(e) => {
-              const copy = { ...newSolveTime }
-              copy.cubeSizeId = parseInt(e.target.value)
-              setNewSolveTime(copy)
-            }}
-            defaultValue={0}>
-            <option value={0} disabled hidden>Select Cube Size...</option>
-            {
-              cubeSizes.map(
-                (c) => {
-                  return (
-                    <option key={`cubeSize--${c.id}`} value={`${c.id}`}>
-                      {`${c.size}`}
-                    </option>
-                  )
-                }
-              )
-            }
-          </select>
-        </div>
-      </fieldset>}
+      <div className="cubeSizeDromDownTimerPage">
+
+        {<fieldset>
+          <div className="cubeSize">
+            <label htmlFor="cubeSize">Cube Size: </label>
+            <select name="cubeSize"
+              onChange={(e) => {
+                const copy = { ...newSolveTime }
+                copy.cubeSizeId = parseInt(e.target.value)
+                setNewSolveTime(copy)
+              }}
+              defaultValue={0}>
+              <option value={0} disabled hidden>Select Cube Size...</option>
+              {
+                cubeSizes.map(
+                  (c) => {
+                    return (
+                      <option key={`cubeSize--${c.id}`} value={`${c.id}`}>
+                        {`${c.size}`}
+                      </option>
+                    )
+                  }
+                )
+              }
+            </select>
+          </div>
+        </fieldset>}
+      </div>
 
 
       <div className="stop-watch">
