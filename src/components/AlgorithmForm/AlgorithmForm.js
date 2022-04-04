@@ -16,6 +16,7 @@ export const AlgorithmForm = () => {
             methodId: form.methodId,
             description: form.description,
             perm: form.perm,
+            size: form.sizeId,
             userId: parseInt(localStorage.getItem("cube_user"))
         }
         const fetchOption = {
@@ -64,7 +65,17 @@ export const AlgorithmForm = () => {
         []
     )
 
-
+    const [sizes, setSizes] = useState([])
+    useEffect(
+        () => {
+            fetch("http://localhost:8088/cubeSizes")
+                .then(res => res.json())
+                .then((sizeArray) => {
+                    setSizes(sizeArray)
+                })
+        },
+        []
+    )
 
 
 
@@ -88,6 +99,40 @@ export const AlgorithmForm = () => {
 
             <form className="algorithmForm">
                 <h2 className="algorithmForm__title">New Algorithm</h2>
+
+
+
+
+
+
+                {<fieldset>
+                    <div className="form-group">
+                        <label htmlFor="size">Size: </label>
+                        <select name="size"
+                            onChange={(e) => {
+                                const copy = { ...form }
+                                copy.sizeId = parseInt(e.target.value)
+                                updateForm(copy)
+                            }}
+                            defaultValue="0">
+                            <option value="0" disabled hidden>Select Size...</option>
+                            {
+                                sizes.map(
+                                    (s) => {
+                                        return (
+                                            <option key={`size--${s.id}`} value={`${s.id}`}>
+                                                {`${s.size}`}
+                                            </option>
+                                        )
+                                    }
+                                )
+                            }
+                        </select>
+                    </div>
+                </fieldset>}
+
+
+
 
 
 
@@ -135,7 +180,7 @@ export const AlgorithmForm = () => {
 
                 {<fieldset>
                     <div className="form-group">
-                        <label htmlFor="method">method: </label>
+                        <label htmlFor="method">Method: </label>
                         <select name="method"
                             onChange={(e) => {
                                 const copy = { ...form }
