@@ -13,7 +13,7 @@ export const User = () => {
 
     useEffect(
         () => {
-            return fetch(`http://localhost:8088/algorithms?_expand=user&&_expand=method&_expand=case&userId=${userId}`)
+            return fetch(`http://localhost:8088/algorithms?_expand=user&&_expand=method&_expand=cubeSize&_expand=case&userId=${userId}`)
                 .then(response => response.json())
                 .then((data) => {
                     updateUserAlgorithmArray(data)
@@ -66,6 +66,7 @@ export const User = () => {
                                 <div className="usersalglist">
                                     <div key={user.id}>
                                         <div key={`algorithm--${user.id}`}>
+                                            <h3 className="spacingForListsContent">{user.cubeSize.size}</h3>
                                             <h3 className="spacingForListsContent">{user.method.name}</h3>
                                             <h3 className="spacingForListsContent">{user.case.name}</h3>
                                             <h3 className="spacingForListsContent">{user.notation}</h3>
@@ -94,6 +95,7 @@ export const User = () => {
                                 <div className="usersalglist">
 
                                     <div key={user.id}>
+                                        <h3 className="spacingForListsContent">{user.cubeSize.size}</h3>
                                         <h3 className="spacingForListsContent">{user.method.name}</h3>
                                         <h3 className="spacingForListsContent">{user.case.name}</h3>
                                         <h3 className="spacingForListsContent">{user.notation}</h3>
