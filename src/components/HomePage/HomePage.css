@@ -247,7 +247,7 @@ border-radius: 25px;
    border: black 5px solid;
    margin: 2vh;
    padding: 2vh;
-   border-radius: 15px;
+   border-radius: 35px;
    font-size: 2.5vh;
    background: linear-gradient(68deg, #8a107598, #e27c7c9d);
   }
@@ -277,6 +277,7 @@ border-radius: 25px;
     background-color: #000000;
     color: #00f7ff;
     font-size: 2.5vh;
+    border-radius: 15px;
   }
 
   .algorithmForm{
@@ -288,11 +289,21 @@ border-radius: 25px;
     color: #00f7ff;
     font-size: 4vh;
     margin-top: 2vh;
+    border-radius: 15px;
   }
 
   .cubeSizeDromDownTimerPage{
     font-size: 5vh;
   }
+  .searchBox{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+
+  .form-group{
+    margin-left: 2vw;
+  }
+
 /* 
     *{
       border: dotted rgb(0, 0, 0);
