@@ -16,7 +16,7 @@ export const AlgorithmForm = () => {
             methodId: form.methodId,
             description: form.description,
             perm: form.perm,
-            size: form.sizeId,
+            cubeSizeId: form.sizeId,
             userId: parseInt(localStorage.getItem("cube_user"))
         }
         const fetchOption = {

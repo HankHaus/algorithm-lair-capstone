@@ -15,7 +15,7 @@ export const AllAlgorithms = () => {
     const history = useHistory()
     useEffect(
         () => {
-            return fetch(`http://localhost:8088/algorithms?_expand=user&_expand=method&_expand=case`)
+            return fetch(`http://localhost:8088/algorithms?_expand=user&_expand=method&_expand=case&_expand=cubeSize`)
                 .then(response => response.json())
                 .then((data) => {
                     updateUnfilteredAlgorithms(data)
@@ -37,6 +37,8 @@ export const AllAlgorithms = () => {
                     return true
                 } else if (algorithm.perm.toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
                     return true
+                } else if (algorithm.cubeSize.size.toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
+                    return true
                 }
 
             })
@@ -57,6 +59,7 @@ export const AllAlgorithms = () => {
                         (filteredAlgorithm) => {
                             return <div className="allAlgsContainer">
                                 <div key={`${filteredAlgorithm.id}`} className="userListItem">
+                                    <h3 className="spacingForListsContent">{filteredAlgorithm.cubeSize.size}</h3>
                                     <h3 className="spacingForListsContent">{filteredAlgorithm.method.name}</h3>
                                     <h3 className="spacingForListsContent">{filteredAlgorithm.case.name}</h3>
                                     <h3 className="spacingForListsContent">{filteredAlgorithm.notation}</h3>
@@ -76,6 +79,7 @@ export const AllAlgorithms = () => {
                         (filteredAlgorithm) => {
                             return <div className="allAlgsContainer">
                                 <div key={`${filteredAlgorithm.id}`} className="userListItem">
+                                    <h3 className="spacingForListsContent">{filteredAlgorithm.cubeSize.size}</h3>
                                     <h3 className="spacingForListsContent">{filteredAlgorithm.method.name}</h3>
                                     <h3 className="spacingForListsContent">{filteredAlgorithm.case.name}</h3>
                                     <h3 className="spacingForListsContent">{filteredAlgorithm.notation}</h3>
