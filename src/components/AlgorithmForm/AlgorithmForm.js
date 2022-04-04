@@ -236,12 +236,12 @@ export const AlgorithmForm = () => {
 
                 <fieldset>
                     <div className="form-group">
-                        <label htmlFor="perm">Permutation name:</label>
+                        <label htmlFor="perm">Permutation name/OLL Number:</label>
                         <input
                             required autoFocus
                             type="text" id="perm"
                             className="form-control"
-                            placeholder="Perm..."
+                            placeholder="Perm/OLL Number..."
                             onChange={
                                 (e) => {
                                     const copy = { ...form }

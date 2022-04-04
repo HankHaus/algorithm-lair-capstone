@@ -50,9 +50,12 @@ export const AllAlgorithms = () => {
     return (
         <>
             <AllAlgorithmsNavBar />
-            <div className="App">
-                <input type="text" placeholder="Search..." className="searchBox" onChange={event => { setSearchTerm(event.target.value) }} />
-            </div>
+          
+
+                <div className="SearchBox">
+                    <input type="text" placeholder="Search..." className="searchBox" onChange={event => { setSearchTerm(event.target.value) }} />
+                </div>
+         
             {
                 searchTerm === "" ?
                     unfilteredAlgorithms.map(
@@ -66,7 +69,7 @@ export const AllAlgorithms = () => {
                                     <h3 className="spacingForListsContent">{filteredAlgorithm.description}</h3>
                                     <h3 className="spacingForListsContent">{filteredAlgorithm.perm}</h3>
                                     <h3 className="spacingForListsContentBOTTOM">{filteredAlgorithm.user.name}</h3>
-                                    <br></br>
+                                   
                                 </div>
                             </div>
 
@@ -86,7 +89,7 @@ export const AllAlgorithms = () => {
                                     <h3 className="spacingForListsContent">{filteredAlgorithm.description}</h3>
                                     <h3 className="spacingForListsContent">{filteredAlgorithm.perm}</h3>
                                     <h3 className="spacingForListsContentBOTTOM">{filteredAlgorithm.user.name}</h3>
-                                    <br></br>
+                                 
                                 </div>
                             </div>
 
