@@ -115,6 +115,6 @@ export default function ControlButtons(props) {
         </span>
         
       </div>
-    </div>
+     </div>
   );
 }
